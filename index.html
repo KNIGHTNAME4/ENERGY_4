@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Corporation Rama</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Modal de advertencia -->
+  <!-- MODAL de bienvenida -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <h2>Bienvenido a CORPORATION RAMA</h2>
       <p>Por favor, ingresa tu nombre para continuar:</p>
-      <input type="text" id="username" placeholder="Tu nombre">
+      <input type="text" id="username" placeholder="Tu nombre" />
+      <p id="error-msg" class="error-text"></p>
       <div class="modal-buttons">
         <button id="createAccountBtn">Crear cuenta</button>
         <button id="loginBtn">Iniciar sesión</button>
@@ -21,18 +22,18 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER con menú, título, buscador y botones -->
   <header class="header">
     <div class="hamburger" id="hamburger">&#9776;</div>
     <h1 class="title">CORPORATION RAMA</h1>
-    <input type="text" class="search" placeholder="Buscar...">
+    <input type="text" class="search" placeholder="Buscar..." />
     <div class="header-buttons">
       <button class="header-btn">Iniciar sesión</button>
       <button class="header-btn">Inscripción</button>
     </div>
   </header>
 
-  <!-- Menú lateral -->
+  <!-- MENÚ lateral oculto -->
   <nav id="sidebar" class="sidebar">
     <ul>
       <li><a href="#">Inicio</a></li>
@@ -41,10 +42,10 @@
     </ul>
   </nav>
 
-  <!-- Contenido principal -->
+  <!-- CONTENIDO principal -->
   <main id="mainContent" class="content">
     <h2>Bienvenido a nuestra plataforma</h2>
-    <p>Aquí va el contenido principal de tu sitio web.</p>
+    <p>Aquí va el contenido principal de tu sitio web. El menú se adapta a cada pantalla.</p>
   </main>
 
   <script src="script.js"></script>
