@@ -1,10 +1,10 @@
-// Mostrar modal al cargar
+// Mostrar el modal al cargar la página
 window.addEventListener('load', () => {
   const modal = document.getElementById('modal');
   modal.style.display = 'flex';
 });
 
-// Botón hamburguesa
+// Lógica del botón hamburguesa para abrir/cerrar menú
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 const content = document.getElementById('mainContent');
@@ -12,33 +12,31 @@ const content = document.getElementById('mainContent');
 hamburger.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 
-  // Solo desplazamos el contenido en pantallas grandes
+  // Solo desplaza el contenido en pantallas grandes
   if (window.innerWidth >= 768) {
-    if (sidebar.classList.contains('active')) {
-      content.style.marginLeft = '200px';
-    } else {
-      content.style.marginLeft = '0';
-    }
+    content.style.marginLeft = sidebar.classList.contains('active') ? '200px' : '0';
   }
 });
 
-// Ocultar modal si ya ingresó nombre
-document.getElementById('createAccountBtn').addEventListener('click', () => {
-  const name = document.getElementById('username').value.trim();
+// Función que valida si se ingresó nombre y cierra el modal
+function handleUserAction(action) {
+  const nameInput = document.getElementById('username');
+  const name = nameInput.value.trim();
+  const errorMsg = document.getElementById('error-msg');
+
   if (name) {
-    alert(Cuenta creada para ${name});
     document.getElementById('modal').style.display = 'none';
+    console.log(${action} para ${name}); // Aquí podrías enviar a backend si lo conectas luego
   } else {
-    alert('Por favor ingresa tu nombre');
+    errorMsg.textContent = 'Por favor ingresa tu nombre.';
   }
+}
+
+// Eventos para los botones de crear cuenta e iniciar sesión
+document.getElementById('createAccountBtn').addEventListener('click', () => {
+  handleUserAction('Cuenta creada');
 });
 
 document.getElementById('loginBtn').addEventListener('click', () => {
-  const name = document.getElementById('username').value.trim();
-  if (name) {
-    alert(Bienvenido, ${name});
-    document.getElementById('modal').style.display = 'none';
-  } else {
-    alert('Por favor ingresa tu nombre');
-  }
+  handleUserAction('Inicio de sesión');
 });
