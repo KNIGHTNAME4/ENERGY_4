@@ -1,7 +1,7 @@
 // Mostrar el modal al cargar la página
-window.addEventListener('load', () => {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'flex';
+//window.addEventListener('load', () => {
+//  const modal = document.getElementById('modal');
+  //modal.style.display = 'flex';
 });
 
 // Lógica del botón hamburguesa para abrir/cerrar menú
