@@ -1,83 +1,54 @@
-/* -------- CONTENIDO PRINCIPAL DE INICIO -------- */
+/* styles.css */
+/* Estilos para el contenido principal (main) solo en index.html */
 
 main {
   padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  gap: 2rem;
+  background-color: #fff;
+  min-height: 70vh;
 }
 
-/* Tarjetas destacadas */
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card h2 {
-  color: var(--color-principal);
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  line-height: 1.5;
-}
-
-/* Botones grandes */
-.card .btn {
-  margin-top: 1rem;
-  background: var(--color-secundario);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  font-weight: bold;
-  border-radius: var(--radio);
-}
-
-.card .btn:hover {
-  background: #274472;
-}
-
-/* Secciones de presentación o bienvenida */
-.hero {
-  background: linear-gradient(to right, #f1faee, #e0e0e0);
-  padding: 3rem;
+.welcome-card {
+  background-color: #ffeaea;
   border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  color: var(--color-secundario);
+.welcome-card h2 {
+  color: #d60000;
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #333;
-  max-width: 700px;
-  margin: auto;
+.welcome-card p {
+  font-size: 1.1rem;
+  color: #444;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  main {
+.btn {
+  margin-top: 1.5rem;
+  background-color: #e63434;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc2a2a;
+}
+
+@media (max-width: 600px) {
+  .welcome-card {
     padding: 1rem;
-    gap: 1.2rem;
   }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .card {
-    padding: 1rem;
+  .btn {
+    width: 100%;
+    display: block;
   }
 }
+
