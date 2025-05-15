@@ -1,0 +1,83 @@
+/* -------- CONTENIDO PRINCIPAL DE INICIO -------- */
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+}
+
+/* Tarjetas destacadas */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  color: var(--color-principal);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+/* Botones grandes */
+.card .btn {
+  margin-top: 1rem;
+  background: var(--color-secundario);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  border-radius: var(--radio);
+}
+
+.card .btn:hover {
+  background: #274472;
+}
+
+/* Secciones de presentación o bienvenida */
+.hero {
+  background: linear-gradient(to right, #f1faee, #e0e0e0);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--color-secundario);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
