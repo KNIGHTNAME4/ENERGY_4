@@ -1,178 +1,165 @@
-/* base.css */
-
-/* Reset básico */
+/* ========== RESET & BASE ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* Tipografía y cuerpo */
-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
-  line-height: 1.6;
 }
 
-/* Header fijo */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== HEADER ========== */
 header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 70px;
-  background-color: #1a1a1a;
+  height: 60px;
+  background: linear-gradient(90deg, #7c1fff, #9c4dff);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo AUGE */
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
-  margin-right: 0.5rem;
-  cursor: pointer;
-}
-
-/* Botones login/registro/búsqueda */
-.header-buttons {
+.header-left,
+.header-center,
+.header-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.header-buttons button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
+/* Logo */
+.header-center img {
+  height: 35px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.header-buttons button:hover {
-  background-color: #666;
-}
-
-/* Barra de búsqueda expandible */
-.search-bar {
-  position: relative;
-}
-
-.search-bar input {
-  width: 0;
-  padding: 0.4rem;
+/* Botones header */
+.header-right button {
+  background-color: white;
+  color: #7c1fff;
   border: none;
-  border-radius: 4px;
-  transition: width 0.4s ease;
-  opacity: 0;
-}
-
-.search-bar input.active {
-  width: 160px;
-  opacity: 1;
-}
-
-/* Menú hamburguesa */
-.menu-toggle {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
+  transition: background 0.3s ease;
 }
 
-/* Menú lateral */
-.sidebar {
+.header-right button:hover {
+  background-color: #e0d4ff;
+}
+
+/* ========== MENU DESPLEGABLE ========== */
+#sidebar {
   position: fixed;
-  top: 70px;
-  right: -250px;
+  top: 60px;
+  left: -250px;
   width: 250px;
-  height: 100%;
-  background-color: #222;
-  color: white;
+  height: calc(100% - 60px);
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  transition: right 0.4s ease;
+  transition: left 0.3s ease;
   z-index: 999;
 }
 
-.sidebar.active {
-  right: 0;
+#sidebar.active {
+  left: 0;
 }
 
-.sidebar ul {
+#sidebar ul {
   list-style: none;
-  padding: 0;
 }
 
-.sidebar ul li {
-  margin-bottom: 1rem;
+#sidebar ul li {
+  padding: 10px;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
+#sidebar ul li:hover {
+  background-color: #f0e9ff;
+  color: #7c1fff;
 }
 
-/* Main (contenido debajo del header) */
-main {
-  padding: 100px 1rem 2rem 1rem;
-}
-
-/* Footer */
-footer {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-/* Alerta elegante */
-.alert {
-  background-color: #ffcc00;
-  color: #333;
-  padding: 1rem;
-  margin: 1rem auto;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.alert button {
-  margin-top: 1rem;
-  background-color: #222;
-  color: white;
+/* Menú hamburguesa */
+#menu-toggle {
+  font-size: 24px;
+  background: none;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
+  color: white;
   cursor: pointer;
 }
 
-.alert button:hover {
-  background-color: #444;
+/* ========== FOOTER ========== */
+footer {
+  background: linear-gradient(90deg, #7c1fff, #9c4dff);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive */
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* ========== ALERTAS ========== */
+.alert {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #ffecb3;
+  color: #7c1f00;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1500;
+  max-width: 300px;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alert button {
+  align-self: flex-end;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffd54f;
+  color: #7c1f00;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .header-buttons {
+  .header-center {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .header-right {
     gap: 0.5rem;
   }
 
-  .search-bar input.active {
-    width: 120px;
+  #sidebar {
+    width: 200px;
   }
 }
+
