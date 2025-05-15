@@ -1,42 +1,38 @@
-// Mostrar el modal al cargar la página
-window.addEventListener('load', () => {
- const modal = document.getElementById('modal');
-  modal.style.display = 'flex';
-});
-
-// Lógica del botón hamburguesa para abrir/cerrar menú
-const hamburger = document.getElementById('hamburger');
+// ----- MENÚ HAMBURGUESA -----
+const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
-const content = document.getElementById('mainContent');
 
-hamburger.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('show');
+});
 
-  // Solo desplaza el contenido en pantallas grandes
-  if (window.innerWidth >= 768) {
-    content.style.marginLeft = sidebar.classList.contains('active') ? '200px' : '0';
+// ----- ALERTA DE INICIO DE SESIÓN -----
+const loginButtons = document.querySelectorAll('.btn-login');
+loginButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert("¿Ya tienes una cuenta? Si no la tienes, deberás crear una.\n\nPresiona OK para continuar.");
+  });
+});
+
+// ----- EXPANSIÓN DE BÚSQUEDA -----
+const searchIcon = document.getElementById('search-icon');
+const searchBar = document.getElementById('search-bar');
+
+searchIcon?.addEventListener('click', () => {
+  searchBar?.classList.toggle('expand');
+  if (searchBar.classList.contains('expand')) {
+    searchBar.focus();
   }
 });
 
-// Función que valida si se ingresó nombre y cierra el modal
-function handleUserAction(action) {
-  const nameInput = document.getElementById('username');
-  const name = nameInput.value.trim();
-  const errorMsg = document.getElementById('error-msg');
+// ----- PEQUEÑA ANIMACIÓN A LAS TARJETAS -----
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'scale(1.02)';
+  });
 
-  if (name) {
-    document.getElementById('modal').style.display = 'none';
-    console.log(${action} para ${name}); // Aquí podrías enviar a backend si lo conectas luego
-  } else {
-    errorMsg.textContent = 'Por favor ingresa tu nombre.';
-  }
-}
-
-// Eventos para los botones de crear cuenta e iniciar sesión
-document.getElementById('createAccountBtn').addEventListener('click', () => {
-  handleUserAction('Cuenta creada');
-});
-
-document.getElementById('loginBtn').addEventListener('click', () => {
-  handleUserAction('Inicio de sesión');
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'scale(1)';
+  });
 });
