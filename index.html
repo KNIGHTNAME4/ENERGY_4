@@ -1,53 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corporación AUGE</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>CORPORACIÓN AUGE</title>
   <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <div class="header-left">
-      <div id="menu-toggle">
-        <span></span><span></span><span></span>
-      </div>
+    <div class="logo">
+      <a href="index.html">AUGE</a>
     </div>
-
-    <div class="header-center">
-      <div class="logo">CORPORACIÓN <span style="color: #fff;">AUGE</span></div>
-    </div>
-
-    <div class="header-right">
-      <input type="text" id="search-bar" placeholder="Buscar...">
-      <button id="search-icon">🔍</button>
-      <button class="btn-login">Iniciar Sesión</button>
-      <button onclick="alert('Redirigiendo al registro...')">Registrarse</button>
-    </div>
+    <nav class="menu-toggle">
+      <button id="menu-btn">☰</button>
+    </nav>
+    <nav class="main-menu">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="derechosdeautor.html">Derechos de Autor</a></li>
+        <li><a href="#" onclick="mostrarAlerta('¿Ya tienes una cuenta? Inicia sesión o regístrate.')">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <aside id="sidebar">
-    <a href="inicio.html" class="sidebar-link">Inicio</a>
-    <a href="#" class="sidebar-link">Servicios</a>
-    <a href="#" class="sidebar-link">Nosotros</a>
-    <a href="#" class="sidebar-link">Contacto</a>
-    <a href="#" class="sidebar-link">Derechos de Autor</a>
-  </aside>
-
   <main>
-    <h1 style="padding: 2rem;">Bienvenido a CORPORACIÓN AUGE</h1>
-    <!-- Aquí puedes poner tarjetas, banners, etc -->
+    <section class="welcome-card">
+      <h2>Bienvenido a CORPORACIÓN AUGE</h2>
+      <p>Explora y conoce más sobre nuestros servicios.</p>
+      <a href="inicio.html" class="btn">Comenzar</a>
+    </section>
   </main>
 
   <footer>
-    <p>Tel: 999-888-777 | contacto@auge.com</p>
-    <p>&copy; 2025 CORPORACIÓN AUGE. Todos los derechos reservados.</p>
+    <p>Contacto: 999-999-999 | contacto@auge.com</p>
+    <p>© 2025 CORPORACIÓN AUGE. Todos los derechos reservados.</p>
   </footer>
 
-
-<script src="main.js" defer></script>  
+  <script src="main.js"></script>
 </body>
-
 </html>
