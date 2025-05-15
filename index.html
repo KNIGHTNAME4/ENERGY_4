@@ -8,61 +8,42 @@
   <link rel="stylesheet" href="base.css" />
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="menu-icon" id="menuToggle">☰</div>
-
-    <div class="logo" onclick="location.href='index.html'">
-      <img src="logo.png" alt="Logo AUGE" />
-      <span>CORPORACIÓN AUGE</span>
+  <header>
+    <div class="header-left">
+      <div id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
     </div>
 
-    <div class="header-actions">
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Buscar..." />
-        <button onclick="toggleSearch()">🔍</button>
-      </div>
-      <button class="btn" onclick="showAlert('Inicia sesión para continuar.')">Iniciar sesión</button>
-      <button class="btn" onclick="showAlert('Crea una cuenta para continuar.')">Registrarse</button>
+    <div class="header-center">
+      <div class="logo">CORPORACIÓN <span style="color: #fff;">AUGE</span></div>
+    </div>
+
+    <div class="header-right">
+      <input type="text" id="search-bar" placeholder="Buscar...">
+      <button id="search-icon">🔍</button>
+      <button class="btn-login">Iniciar Sesión</button>
+      <button onclick="alert('Redirigiendo al registro...')">Registrarse</button>
     </div>
   </header>
 
-  <!-- MENÚ LATERAL -->
-  <nav class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="#">Nosotros</a></li>
-      <li><a href="#">Fundadores</a></li>
-      <li><a href="#">Empresas asociadas</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Armas</a></li>
-      <li><a href="#">Proyectos</a></li>
-      <li><a href="#">Derechos de autor</a></li>
-    </ul>
-  </nav>
+  <aside id="sidebar">
+    <a href="inicio.html" class="sidebar-link">Inicio</a>
+    <a href="#" class="sidebar-link">Servicios</a>
+    <a href="#" class="sidebar-link">Nosotros</a>
+    <a href="#" class="sidebar-link">Contacto</a>
+    <a href="#" class="sidebar-link">Derechos de Autor</a>
+  </aside>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="main-content">
-    <h1>Bienvenido a Corporación AUGE</h1>
-    <p>Explora nuestro universo de innovación, tecnología y poder.</p>
+  <main>
+    <h1 style="padding: 2rem;">Bienvenido a CORPORACIÓN AUGE</h1>
+    <!-- Aquí puedes poner tarjetas, banners, etc -->
   </main>
 
-  <!-- FOOTER -->
-  <footer class="main-footer">
-    <p>© 2025 Corporación AUGE. Todos los derechos reservados.</p>
-    <p>Contacto: contacto@auge.com | Tel: +123 456 789</p>
+  <footer>
+    <p>Tel: 999-888-777 | contacto@auge.com</p>
+    <p>&copy; 2025 CORPORACIÓN AUGE. Todos los derechos reservados.</p>
   </footer>
-
-  <!-- ALERTA -->
-  <div class="alert" id="alertBox">
-    <div class="alert-content">
-      <p id="alertMessage">Este es un mensaje de alerta.</p>
-      <button onclick="closeAlert()">OK</button>
-    </div>
-  </div>
-
-  <!-- JS -->
-  <script src="main.js"></script>
 </body>
+
 </html>
