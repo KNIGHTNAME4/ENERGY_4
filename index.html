@@ -4,59 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Corporación AUGE</title>
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="inicio.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- HEADER FIJO -->
-  <header class="header">
-    <div class="header-left">
-      <button id="menu-toggle" class="menu-button">☰</button>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+
+    <div class="logo" onclick="location.href='index.html'">
+      <img src="logo.png" alt="Logo AUGE" />
+      <span>CORPORACIÓN AUGE</span>
     </div>
-    <div class="header-center">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo-a.png" alt="Logo AUGE" />
-        <span>CORPORACIÓN AUGE</span>
-      </a>
-    </div>
-    <div class="header-right">
-      <button class="search-btn" id="search-toggle">🔍</button>
-      <input type="text" id="search-input" placeholder="Buscar..." />
-      <a href="login.html" class="btn">Iniciar Sesión</a>
-      <a href="registro.html" class="btn btn-secondary">Registrarse</a>
+
+    <div class="header-actions">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar..." />
+        <button onclick="toggleSearch()">🔍</button>
+      </div>
+      <button class="btn" onclick="showAlert('Inicia sesión para continuar.')">Iniciar sesión</button>
+      <button class="btn" onclick="showAlert('Crea una cuenta para continuar.')">Registrarse</button>
     </div>
   </header>
 
-  <!-- MENÚ LATERAL (A LA IZQUIERDA) -->
-  <nav id="side-menu" class="side-menu">
+  <!-- MENÚ LATERAL -->
+  <nav class="sidebar" id="sidebar">
     <ul>
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="armas.html">Armas</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="proyectos.html">Proyectos</a></li>
-      <li><a href="empresas.html">Empresas</a></li>
-      <li><a href="fundadores.html">Fundadores</a></li>
-      <li><a href="derechosdeautor.html">Derechos de Autor</a></li>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">Fundadores</a></li>
+      <li><a href="#">Empresas asociadas</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Armas</a></li>
+      <li><a href="#">Proyectos</a></li>
+      <li><a href="#">Derechos de autor</a></li>
     </ul>
   </nav>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="main-content">
-    <section class="bienvenida">
-      <h1>Bienvenido a la Corporación AUGE</h1>
-      <p>Innovación, poder y futuro en un solo lugar.</p>
-      <a href="proyectos.html" class="btn btn-primary">Ver Proyectos</a>
-    </section>
+    <h1>Bienvenido a Corporación AUGE</h1>
+    <p>Explora nuestro universo de innovación, tecnología y poder.</p>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>Contacto: 099-999-9999 | contacto@auge.com</p>
-    <p>&copy; 2025 Corporación AUGE. Todos los derechos reservados.</p>
+  <footer class="main-footer">
+    <p>© 2025 Corporación AUGE. Todos los derechos reservados.</p>
+    <p>Contacto: contacto@auge.com | Tel: +123 456 789</p>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="js/base.js"></script>
-  <script src="js/index.js"></script>
+  <!-- ALERTA -->
+  <div class="alert" id="alertBox">
+    <div class="alert-content">
+      <p id="alertMessage">Este es un mensaje de alerta.</p>
+      <button onclick="closeAlert()">OK</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="main.js"></script>
 </body>
 </html>
