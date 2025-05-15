@@ -1,10 +1,5 @@
 /* base.css */
-:root {
-  --main-color: #ff3c3c;
-  --secondary-color: #ffffff;
-  --bg-dark: #1e1e1e;
-  --gray: #888;
-}
+/* Estilos globales para todo el sitio */
 
 * {
   margin: 0;
@@ -14,149 +9,90 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--secondary-color);
-  min-height: 100vh;
+  background-color: #f2f2f2;
+  color: #333;
 }
 
-/* HEADER */
+/* Header */
 header {
+  background-color: #e63434;
+  color: #fff;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--main-color);
-  position: relative;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-.header-left,
-.header-center,
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.header-center {
-  flex: 1;
-  justify-content: center;
-}
-
-.header-right {
-  gap: 0.5rem;
-}
-
-.logo {
+.logo a {
+  color: #fff;
+  font-weight: bold;
   font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button {
-  background: var(--secondary-color);
-  color: var(--main-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #ffe3e3;
-}
-
-/* MENÚ HAMBURGUESA */
-#menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-#menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 3px;
-}
-
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 250px;
-  height: 100vh;
-  background: #2a2a2a;
-  color: white;
-  padding: 1rem;
-  transition: left 0.3s ease;
-  z-index: 10;
-}
-
-#sidebar.show {
-  left: 0;
-}
-
-.sidebar-link {
-  display: block;
-  padding: 0.75rem 0;
-  color: white;
   text-decoration: none;
 }
 
-.sidebar-link:hover {
-  background: var(--main-color);
-  padding-left: 10px;
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-/* BUSCADOR */
-#search-bar {
-  width: 0;
-  transition: width 0.4s ease;
-  padding: 0.3rem;
-  border-radius: 8px;
+.main-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.main-menu a:hover {
+  background-color: #ff5e5e;
+}
+
+/* Menú móvil */
+.menu-toggle {
+  display: none;
+}
+
+#menu-btn {
+  background: transparent;
   border: none;
-  opacity: 0;
+  font-size: 2rem;
+  color: white;
 }
 
-#search-bar.expand {
-  width: 150px;
-  opacity: 1;
-}
-
-/* FOOTER */
-footer {
-  padding: 1rem;
-  background: #111;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--gray);
-  margin-top: 2rem;
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
-  #menu-toggle {
-    display: flex;
+  .main-menu {
+    display: none;
+    width: 100%;
   }
 
-  .header-left,
-  .header-right {
-    flex: none;
+  .main-menu.active {
+    display: block;
   }
 
-  .header-center {
-    flex: 1;
-    justify-content: center;
+  .main-menu ul {
+    flex-direction: column;
+    gap: 0;
   }
 
-  .header-right {
-    gap: 0.3rem;
+  .main-menu a {
+    display: block;
+    padding: 1rem;
   }
 
-  button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
+  .menu-toggle {
+    display: block;
   }
+}
+
+/* Footer */
+footer {
+  background-color: #292929;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
