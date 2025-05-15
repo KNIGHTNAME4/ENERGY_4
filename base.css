@@ -1,11 +1,9 @@
-/* -------- BASE GLOBAL -------- */
-
+/* base.css */
 :root {
-  --color-principal: #e63946;
-  --color-secundario: #1d3557;
-  --color-fondo: #f1faee;
-  --color-texto: #1d1d1d;
-  --radio: 12px;
+  --main-color: #ff3c3c;
+  --secondary-color: #ffffff;
+  --bg-dark: #1e1e1e;
+  --gray: #888;
 }
 
 * {
@@ -16,147 +14,149 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: var(--color-fondo);
-  color: var(--color-texto);
+  background-color: var(--bg-dark);
+  color: var(--secondary-color);
+  min-height: 100vh;
 }
 
-/* -------- HEADER -------- */
-
-.main-header {
-  background: var(--color-principal);
-  color: white;
+/* HEADER */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: var(--main-color);
+  position: relative;
 }
 
-.main-header .logo {
+.header-left,
+.header-center,
+.header-right {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
-.main-header .logo img {
-  width: 40px;
-  margin-right: 10px;
+.header-center {
+  flex: 1;
+  justify-content: center;
 }
 
-.main-header .menu-icon {
-  font-size: 1.8rem;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
+.header-right {
   gap: 0.5rem;
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.search-container input {
-  padding: 0.3rem 0.6rem;
-  border-radius: var(--radio);
-  border: none;
-}
-
-.btn {
-  background: white;
-  color: var(--color-principal);
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radio);
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  background: #fcd5d8;
+button {
+  background: var(--secondary-color);
+  color: var(--main-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* -------- SIDEBAR (MENÚ) -------- */
+button:hover {
+  background: #ffe3e3;
+}
 
-.sidebar {
-  background: var(--color-secundario);
-  width: 220px;
-  min-height: 100vh;
+/* MENÚ HAMBURGUESA */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+#menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 3px;
+}
+
+#sidebar {
   position: fixed;
-  left: -230px;
   top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background: #2a2a2a;
+  color: white;
+  padding: 1rem;
   transition: left 0.3s ease;
-  padding-top: 80px;
-  z-index: 999;
+  z-index: 10;
 }
 
-.sidebar.active {
+#sidebar.show {
   left: 0;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li a {
+.sidebar-link {
   display: block;
-  padding: 1rem;
+  padding: 0.75rem 0;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.sidebar li a:hover {
-  background: #457b9d;
+.sidebar-link:hover {
+  background: var(--main-color);
+  padding-left: 10px;
 }
 
-/* -------- ALERTA -------- */
-
-.alert {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.alert-content {
-  background: white;
-  padding: 2rem;
-  border-radius: var(--radio);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-.alert-content button {
-  margin-top: 1rem;
-  padding: 0.4rem 1rem;
-  background: var(--color-principal);
-  color: white;
+/* BUSCADOR */
+#search-bar {
+  width: 0;
+  transition: width 0.4s ease;
+  padding: 0.3rem;
+  border-radius: 8px;
   border: none;
-  border-radius: var(--radio);
-  cursor: pointer;
+  opacity: 0;
 }
 
-/* -------- FOOTER -------- */
+#search-bar.expand {
+  width: 150px;
+  opacity: 1;
+}
 
-.main-footer {
-  background: var(--color-secundario);
-  color: white;
-  padding: 1.5rem;
+/* FOOTER */
+footer {
+  padding: 1rem;
+  background: #111;
   text-align: center;
+  font-size: 0.9rem;
+  color: var(--gray);
   margin-top: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: flex;
+  }
+
+  .header-left,
+  .header-right {
+    flex: none;
+  }
+
+  .header-center {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .header-right {
+    gap: 0.3rem;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
 }
